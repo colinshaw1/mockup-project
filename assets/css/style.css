@@ -52,6 +52,13 @@ h1 {
     border-radius: 3px;
     cursor: pointer;
 }
+.btn--big::after{
+    content: attr(data-type);
+    font-size: 1rem;
+    color: #445361;
+    position: relative;
+    left: -0.5rem;
+}
 .score-area{
     color: rgb(224, 224, 224);
     height: 20vh;
