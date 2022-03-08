@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(48,25,52);
+    font-family: sans-serif;
+    color: rgb(244,244,244);
+    height: 100vh;
+}
+h1 {
+    font-size: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
