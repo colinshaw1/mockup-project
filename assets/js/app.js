@@ -28,5 +28,15 @@ let computerSelection;
 function compareSelect(computerChoice){
     if(playerSelection === computerChoice){
         return "Computer has chosen " + computerSelection + "this round is a tie!";
+    }else if(playerSelection === "rock"){
+        if(computerChoice === "lizard"){
+            return "Rock crushes Lizard! Player Wins";
+        }else if(computerChoice === "scissors"){
+            return "Rock crushes Scissors!! Player Wins";
+        } else if(computerChoice === "spock"){
+            return "Spock vaporizes Rock!! Computer Wins";
+        }else{
+            return "Paper covers Rock! Computer Wins";
+        }
     }
 }
