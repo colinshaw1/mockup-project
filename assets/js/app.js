@@ -7,26 +7,16 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "submit") {
-               alert("You have clicked Submit");
+                checkAnswer();
             } else {
                 let gameType = this.getAttribute("data-type");
-                alert(`You clicked ${gameType}`);
+                runGame(gameType);
             }
         })
     }
+    runGame("easy");
     })
 
-// document,addEventListener("DOMContentLoaded", function(){
-//     let buttons = document.getElementsByTagName('button');
-
-//     for (let button of buttons) {
-//         button.addEventListener("click", function() {
-//             if (this.getAttribute("data-type") === "submit") {
-//                 checkAnswer();
-//             } else {
-//                 let game = this.getAttribute("data-type");
-
-//             }
 
 
 //     computerChoice = Math.random();
@@ -74,28 +64,15 @@ document.addEventListener("DOMContentLoaded", function() {
 //     easyBtn.addEventListener("click");
 // }
 
+function runGame(gameType){
+    
+    if(gameType == "easy"){
+        easyGame()
+    }else{
+        alert(`Unkown game type: ${gameType}`);
+        throw(`Unkown game type: ${gameType}.Aborting!`)
 
-
-
-
-function runGame() {
-
-}
-
-function incrementScore() {
-
-}
-
-function easyGame() {
-
-}
-
-function hardGame() {
-
-}
-
-function resetGame() {
-
+    }
 }
 
 /**
@@ -158,3 +135,33 @@ function compareSelect(computerChoice) {
         }
     }
 };
+
+function checkAnswer(){
+
+}
+
+function incrementScore() {
+
+}
+
+function easyGame(rock,paper,scissors,lizard,spock) {
+
+    document.getElementById('rock') = rock;
+    document.getElementById('paper') = paper;
+    document.getElementById('scissors') = scissors;
+    document.getElementById('lizard') = lizard;
+    document.getElementById('spock')  = spock;
+}
+
+function hardGame() {
+
+    document.getElementById('rock') = rock;
+    document.getElementById('paper') = paper;
+    document.getElementById('scissors') = scissors;
+    document.getElementById('lizard') = lizard;
+    document.getElementById('spock')  = spock;
+}
+
+function resetGame() {
+
+}

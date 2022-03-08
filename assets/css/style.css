@@ -19,16 +19,18 @@ h1 {
     padding-bottom: 50px;
 }
 .play-area{
+    width: 50%;
+    margin: 30px auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 60px;
 }
 .choices-area  {
+    width: 84%;
+    margin: 30px auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 60px;
 }
 .choices-area button{
     width: 130px;
