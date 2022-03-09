@@ -26,4 +26,17 @@ let selectionChoice = document.getElementsByClassName("choice-button");
 function runEasyGame(e) {
     choice = e.target.class;
     playerSelection = e.target.innerHTML = choice;
+
+    computerChoice = Math.random();
+    if (computerChoice < .24){
+        computerChoice = 'paper';
+    } else if (computerChoice <= .47){
+        computerChoice = 'Paper';
+    } else if (computerChoice <= .60){
+        computerChoice = 'Scissors';
+    }  else if (computerChoice <= .77){
+        computerChoice = 'lizard';
+    }else {
+        computerChoice = 'spock';
+    }
 }
