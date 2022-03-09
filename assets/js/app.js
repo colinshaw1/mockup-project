@@ -1,46 +1,39 @@
+// Wait for the DOM to finish loading before running the game
+// Get the button elements and add event listeners to them
+
+document.addEventListener("DOMContentLoaded", function () {
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function () {
+            if (this.getAttribute("data-type") === "submit") {
+                // checkWinner();
+            } else {
+                let gameType = this.getAttribute("data-type");
+                rungame(gameType);
+            }
+        })
+    }
+
+})
 //Declaring variables 
 let playerSelection = document.getElementById("player-choice");
 let computerChoice = document.getElementById("computer-choice");
-let result = document.getElementById("result");
-let choice;
-let selectionChoice = document.getElementsByClassName("choice-button");
-
-/**
- * takes each button in the choices sections and listens for a click if any button is selected
- * the for each method calls each element in the class choice button
- */
-//arrow statment below allows me to creat a function much cleaner. reference W3 schools Arrow function lesson
-// selectionChoice.forEach(selectionChoice.addEventListener('click', (e) => {
-//     choice = e.target.id; //event lets us target the user choice and save it
-//     playerSelection.innerHTML = choice;
-// }))
-
-for (let i = 0; i < selectionChoice.length; i++) {
-    selectionChoice[i].addEventListener('click', runEasyGame);
-}
+let result = document.getElementById("result-choice");
 
 /***
  * Run easy game function that allows us to play the game when easy game is clicked
  */
-function runEasyGame(e) {
-    choice = e.target.class;
-    playerSelection = e.target.innerHTML = choice;
-
-    computerChoice = Math.random();
-    if (computerChoice < .24) {
-        computerChoice = 'paper';
-    } else if (computerChoice <= .47) {
-        computerChoice = 'Paper';
-    } else if (computerChoice <= .60) {
-        computerChoice = 'Scissors';
-    } else if (computerChoice <= .77) {
-        computerChoice = 'lizard';
-    } else {
-        computerChoice = 'spock';
+ function rungame(gameType) {
+ 
+    if(gameType === "easy"){
+        easyGame();
     }
-}
 
-
+ }
+/***
+ * Function to declare results of choice buttons
+ */
 function checkWinner(playerSelection, computerChoice) {
     if (playerSelection === computerChoice) {
         return "Computer has chosen " + computerSelection + "this round is a tie!";
@@ -95,4 +88,31 @@ function checkWinner(playerSelection, computerChoice) {
             return "Lizard poisons Spock! Computer Wins";
         }
     }
+
+
+function easyGame() {
+    computerChoice = Math.random();
+    if (computerChoice < .24) {
+        computerChoice = 'paper';
+    } else if (computerChoice <= .47) {
+        computerChoice = 'Paper';
+    } else if (computerChoice <= .60) {
+        computerChoice = 'Scissors';
+    } else if (computerChoice <= .77) {
+        computerChoice = 'lizard';
+    } else {
+        computerChoice = 'spock';
+    }
 }
+}
+
+function hardGame(){
+
+}
+function resultArea(){
+
+}
+
+ function addScore(){
+
+ }
