@@ -1,52 +1,25 @@
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
 
-document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
-
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            if (this.getAttribute("data-type") === "submit") {
-                checkAnswer();
-            } else {
-                let gameType = this.getAttribute("data-type");
-                runGame(gameType);
-            }
-        })
-    }
-    runGame("easy");
-    })
-
-
-
-//     computerChoice = Math.random();
-//     if (computerChoice < 0.2) {
-//         computerChoice = "rock";
-//     } else if (computerChoice <= 0.4) {
-//         computerChoice = "paper";
-//     } else if (computerChoice <= 0.6) {
-//         computerChoice = "scissors";
-//     } else if (computerChoice <= 0.8) {
-//         computerChoice = "lizard";
-//     } else {
-//         computerChoice = "spock";
-//     }
-// });
-// document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function () {
 //     let buttons = document.getElementsByTagName("button");
 
-// for (let button of buttons) {
-//     button.addEventListener("click", function() {
-//         if (this.getAttribute("data-type") === "submit") {
-//             checkAnswer();
-//         } else {
-//             let computerChoice = this.getAttribute("data-type");
-//             compareSelect(computerChoice);
-//         }
-//     });
+//     for (let button of buttons) {
+//         button.addEventListener("click", function () {
+//             if (this.getAttribute("data-type") === "submit") {
+//                 checkAnswer();
+//             } else {
+//                 let gameType = this.getAttribute("data-type");
+//                 runGame(gameType);
+//             }
+//         })
 //     }
+    
+// })
 
-// });
+
+
+
 
 //Declare variables for player and computer secltions
 // let playerSelection;
@@ -54,26 +27,24 @@ document.addEventListener("DOMContentLoaded", function() {
 // let pScore = 0; 
 // let cScore = 0;
 
+/***
+ * Function to start the game
+ */
+// function runGame(gameType) {
 
-// /***
-//  * Function to start the game 
-//  */
-// function startEasyGame(){
-//     let easyBtn = document.getElementById('play-easy');
+//     if (gameType == "easy") {
+//         easyGame()
+//     } else {
+//         alert(`Unkown game type: ${gameType}`);
+//         throw (`Unkown game type: ${gameType}.Aborting!`)
 
-//     easyBtn.addEventListener("click");
+//     }
 // }
+let playerSelection = document.getElementById("payler-choice");
+let computerChoice = document.getElementById("computer-choice");
+let result = document.getElementById("result");
 
-function runGame(gameType){
-    
-    if(gameType == "easy"){
-        easyGame()
-    }else{
-        alert(`Unkown game type: ${gameType}`);
-        throw(`Unkown game type: ${gameType}.Aborting!`)
-
-    }
-}
+const selectionChoice = document.getElementsByClassName("choice-button")
 
 /**
  * The main function that will use an if statement to compare each selction 
@@ -136,32 +107,32 @@ function compareSelect(computerChoice) {
     }
 };
 
-function checkAnswer(){
+// function checkAnswer() {
 
-}
+// }
 
-function incrementScore() {
+// function incrementScore() {
 
-}
+// }
 
-function easyGame(rock,paper,scissors,lizard,spock) {
+// function easyGame(rock, paper, scissors, lizard, spock) {
 
-    document.getElementById('rock') = rock;
-    document.getElementById('paper') = paper;
-    document.getElementById('scissors') = scissors;
-    document.getElementById('lizard') = lizard;
-    document.getElementById('spock')  = spock;
-}
+//     document.getElementById('rock') = rock;
+//     document.getElementById('paper') = paper;
+//     document.getElementById('scissors') = scissors;
+//     document.getElementById('lizard') = lizard;
+//     document.getElementById('spock') = spock;
+// }
 
-function hardGame() {
+// function hardGame() {
 
-    document.getElementById('rock') = rock;
-    document.getElementById('paper') = paper;
-    document.getElementById('scissors') = scissors;
-    document.getElementById('lizard') = lizard;
-    document.getElementById('spock')  = spock;
-}
+//     document.getElementById('rock') = rock;
+//     document.getElementById('paper') = paper;
+//     document.getElementById('scissors') = scissors;
+//     document.getElementById('lizard') = lizard;
+//     document.getElementById('spock') = spock;
+// }
 
-function resetGame() {
+// function resetGame() {
 
-}
+// }
